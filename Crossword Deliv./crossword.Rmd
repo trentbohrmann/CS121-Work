@@ -1,0 +1,65 @@
+Crossword Deliverable
+===================================
+```{r}
+words <- readLines(url("http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt"))
+
+head(words)
+
+
+determineWords <- function(a){
+  return(length(words[grep(a,words)]))
+}
+
+"Number of words of length 1,2, etc."
+
+determineWords("^.$")
+
+determineWords("^..$")
+
+
+"Number of words that start with a, b, etc."
+
+determineWords("^a")
+
+determineWords("^b")
+
+determineWords("^x")
+
+"Words that have q but not a u following it"
+
+determineWords("q[^u]")
+
+```
+
+# Crossword Helper
+
+```{r}
+
+crossword <- function(pattern){
+  matched <- grep(pattern,words)
+  return((words)[matched])
+}
+
+
+crossword("alibi")
+  
+```
+
+
+
+# Better Crossword
+
+```{r}
+
+betterCrossword <- function(v,numchar){
+  cross <- rep(".",numchar)
+  cross[v] <- names(v)
+  down <- paste("^",paste(cross,collapse=""),"$",sep="")
+  result <- grep(down,words)
+  return(words[result])
+}
+
+betterCrossword(c(s=1, t=2))
+```
+
+
