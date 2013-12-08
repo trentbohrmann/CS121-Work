@@ -1,0 +1,53 @@
+Voting Stuff
+========================================================
+
+Component 1:
+ COUNTVOTES()
+  ddply()
+  tbale
+  ["first"]
+  sort()...decreasing
+  order()
+  
+Component 2:
+WHOWON()
+  mutate()
+  sum()
+  if
+  index
+  > or <
+  * or /
+  
+  
+Component 3:
+REMOVEUNDERVOTE()
+REMOVEOVERVOTE()
+REMOVECANDIDATE()
+  indexing
+  which
+  
+Component 4:
+PROMOTECHOICE()
+  ==NA
+  is.na()
+  index
+  
+  
+```{r}
+require(mosaic)
+votes<- fetchData("COMP121/MinneapolisMayor-2013.csv")
+
+names(votes)[2]<-"First"
+names(votes)[3]<-"Second"
+names(votes)[4]<-"Third"
+
+countVotes<-function(x){
+  firstVotes<-x["First"]
+  return(as.data.frame(sort(table(firstVotes), decreasing=TRUE)))
+}
+
+
+
+whoWon<-function(x){
+  return((x[1]/sum(x))>=.5)
+}
