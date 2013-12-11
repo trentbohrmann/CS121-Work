@@ -1,0 +1,51 @@
+Final
+=========================
+```{r}
+require(mosaic)
+require(plyr)
+fetchData("COMP121/word-hints.R")
+```
+
+```{r}
+letterProportion<-function(x){
+  return(as.data.frame(sort(table(strsplit(x,"")), decreasing=TRUE)))
+}
+```
+
+# This One Works!!
+```{r}
+letterProportionBeta<-function(x){
+  first<-(as.data.frame(sort(table(strsplit(x,"")), decreasing=TRUE)))
+  second<-(nchar(x))
+  return(first/second)         
+}
+
+
+
+
+```{r}
+letterProportionBeta("HelloWorld")
+
+```
+
+
+
+```{r}
+freqCompare<-function(x){
+  table<-letterProportionBeta(x)
+  table2<-table(English)
+  return(mutate(table,LANG=table2))
+}
+
+
+```
+
+
+```{r}
+whichLanguage<-function(x){
+  table<-freqCompare(x)
+  table2<-sort(table(X^2), decreasing = TRUE)
+  return(table2)
+}
+
+  
