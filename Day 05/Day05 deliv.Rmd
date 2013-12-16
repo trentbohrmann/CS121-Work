@@ -1,0 +1,60 @@
+Day 05
+========================================================
+
+# Outlier
+```{r}
+outlier <- function(x){
+  x<-c(0:9)
+  outlier<-quantile(x, probs = seq(0.25,0.75), na.rm=FALSE, names=TRUE, type=7)
+  return(outlier)
+}
+```
+
+# Numbers and Languages
+```{r}
+  digitToWord <- function (number,word) {
+  dtw <- word[number]
+  return(dtw)
+}
+digitToWord(c(9,8,7,6,5,4,3,2,1), c("one", "two", "three", "four", "five", "six", "seven", "eight", "nine"))
+```
+
+# Crossword Puzzle Help
+```{r}
+lettersMatch <- function(words, pattern){
+  small<-c("case", "second", "third", "are")
+  match<-grepl("^...$", small)
+  return(match)
+}
+```
+
+```{r}
+lettersMatch("base", 3)
+```
+
+# Series with Pi
+```{r}
+piSeries <- function(n) {
+  n <- c(1:n)
+    pi <- (4 * sum( ((-1)^(n-1)) / (2*(n-1)+1)))
+  return(pi) 
+}
+```
+
+```{r}
+piSeries(123456)
+```
+
+# How Close to Pi
+```{r}
+howCloseToPi <- function(n) {
+  n <- c(1:n)
+  pi <- (4 * cumsum( ((-1)^(n-1)) / (2*(n-1)+1)))
+  plot(n, pi)
+  return(pi)
+  }
+```
+
+```{r}
+howCloseToPi(4)
+```
