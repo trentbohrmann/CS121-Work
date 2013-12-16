@@ -1,0 +1,24 @@
+Drawing a circle
+
+angs <- seq(0,2*pi,length=100)
+xpts <- x+r*cos $theta$
+ypts <- y+r*sin(angle)
+
+
+```{r}
+circle <- function(x,y,r,...) {
+  angs <- seq(0,2*pi, length=100)
+  xpts <- x+r*cos(angs)
+  ypts <- y+r*sin(angs) 
+  polygon(xpts,ypts,...)
+}
+
+```
+LOGICALS:
+Boolean ----> stands for something with two possible values
+TRUE / FALSE
+!_ not
+_&_ and
+_\_ or
+
+_>_

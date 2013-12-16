@@ -1,0 +1,35 @@
+Computing = transorming inputs into outputs
+algorithm = set of steps using existing operators to perform a computation
+
+ Classes of states: numerics, character strings, logicals, functions all consist of the things that go into the other part of classes which are lists, vectors, matrices, arrays and data frames
+ 
+syntax: return(), function invocation, { }, if/else(),loop[break is how to terminate the loop], while, for, <<-["permanentely" change an input], reserved words[if, while, function, repeat, else, break] 
+
+operators: paste(), grep(), join(), sample(), polygon(), et cetera
+
+other languages: latex[ _, \frac{}{},] , HTML[div class= "span4"...<\div], markdown
+
+grep examples: "[a/b]" is there an a or b in there?
+        ^.$*
+        
+inputs/outputs: bring in files [read.jpeg, read.csv(),cat,] 
+ 
+ 
+ mprnews legalities keep ranked-choice vote counting in dark ages, curtis gilbert
+ 
+ with(votes, table(X1ST.CHOICE.MAYOR.MINNEAPOLIS))
+ 
+ foo<- with(votes, table(1ST.CHOICE.MAYOR.MINNEAPOLIS))
+ classsfoo)
+        "table"
+ data.frame(foo) [to convert table to data frame]
+ 
+ counts<- data.frame(foo)
+ sum(counts$Freq)
+    "80101"
+ counts<- mutate(counts, Perc= Freq/80101)
+ which.max(counts)
+  
+
+
+

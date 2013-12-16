@@ -1,0 +1,106 @@
+Voting Stuff
+========================================================
+
+Component 1:
+ COUNTVOTES()
+  ddply()
+  tbale
+  ["first"]
+  sort()...decreasing
+  order()
+  
+Component 2:
+WHOWON()
+  mutate()
+  sum()
+  if
+  index
+  > or <
+  * or /
+  
+  
+Component 3:
+REMOVEUNDERVOTE()
+REMOVEOVERVOTE()
+REMOVECANDIDATE()
+  indexing
+  which
+  
+Component 4:
+PROMOTECHOICE()
+  ==NA
+  is.na()
+  index
+  
+  
+```{r}
+require(mosaic)
+votes<- fetchData("COMP121/MinneapolisMayor-2013.csv")
+
+names(votes)[2]<-"First"
+names(votes)[3]<-"Second"
+names(votes)[4]<-"Third"
+
+countVotes<-function(x){
+  firstVotes<-x["First"]
+  return(as.data.frame(sort(table(firstVotes), decreasing=TRUE)))
+}
+
+
+
+whoWon<-function(x){
+  return((x[1]/sum(x))>=.5)
+}
+
+
+
+Component 1:
+
+countVotes <- function(x) {
+
+
+names(votes)[2]<-"first"
+names(votes)[3]<-"second"
+names(votes)[4]<-"third"
+
+
+
+
+
+
+is this what we want? YES
+
+countVotes<-function(x){
+  firstVotes<-x["First"]
+  return(as.data.frame(sort(table(firstVotes), decreasing=TRUE)))
+}
+
+
+Component 2:
+
+
+with(votes, table(first)
+voteTable<- with(votes, table(first)
+voteDataFrame<- data.frame(voteTable)
+voteStats<-mutate(voteDataFrame, Perc= Freq/(sum(voteDataFrame$Freq)))
+
+^^[[[this gives the percentage of all of them, just need to sort/take the top one and see if it is less than .5]]]
+
+how's this?
+```{r}
+whoWon<-function(x){
+  return((x[1]/sum(x))>=.5)
+}
+  
+```
+
+Component 3:
+
+
+
+removeUndervote<-function(x){
+  
+
+
+
+Component 4:

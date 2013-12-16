@@ -1,0 +1,55 @@
+October 10, 2013
+================
+
+## Base Conversions
+```{r}
+baseToNumeric<-function(Nvec,b){
+  howMany <- length(Nvec)
+  herdsize <- b^((howMany-1):0)
+  return(sum(as.numeric(Nvec)*herdsize))
+  }
+```
+
+Test Case
+```{r}
+baseToNumeric(c("7","6","5","4"),8)
+baseToNumeric(c("7","6","5","4"),12)
+```
+### As a loop
+
+```{r}
+convertAsALoop<-function(Nvec,b){
+  # Initialize State
+  Nvec <- as.numeric(Nvec)
+  sheepCount <- 0
+  boxSize <- 1
+
+  for( k in length(Nvec):1){
+    sheepCount <- sheepCount + boxSize*Nvec[k]
+    boxSize <- boxSize*b
+  }
+  return(sheepCount)
+}
+```
+
+Test Case2
+```{r}
+convertAsALoop(c("7","6","5","4"),12)
+```
+
+## #Blastoff
+
+```{r}
+blastoffWhile<-function(time){
+  while(time!=0){
+    Sys.sleep(1)
+    cat(time,"")
+    time<-time-1
+    }
+  Sys.sleep(1)
+  cat("Blastoff!")
+  }
+```
+Test #Blastoff
+```{r}
+blastoffWhile(5)

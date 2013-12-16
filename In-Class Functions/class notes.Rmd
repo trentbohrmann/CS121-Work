@@ -1,0 +1,95 @@
+Class Notes -------
+
+byte consists of 8 slots (bits); each slot can be 0 or 1. 
+Signed Integer-> 256 possibilites in a byte, possible combinations = (-127 <-> 128) 
+
+for a # .160117657x10^-18, we'll use:
+
+8bytes
+ * 51 bits -> mantissa
+ * 13 bits -> exponent
+ 
+ 
+```{r} 
+numToText<-function(num,lang){
+      
+  
+  ex:
+    textToNum(zwölf, German)
+  how do we get 12? 
+  lang==word
+      
+  WordToNum <- function(lang,word) which(lang==word)-1
+  WordToNum(EnglishNumbers,"three")
+  }
+```
+
+yotta=10^24
+
+10^5 bytes/sec (data used to record a call)
+  about 6 hours of each phone conversation for everyone in ze world
+  
+  ======================
+  < > return logicals
+  [ ] two inputs: vector or list and an index
+  <- declare a variable, assign a value to an object
+  grep() 
+  grepl()
+  sub()
+  
+EX: {{}}  > gsub('e','*',v)
+[1] "b*com*s" "ag*s"  }}
+  ><><><><><><><><><><><><><><><><><><><>
+  Crossword
+  
+  grepl("^b.t.$",crossword) = starts with b, any character, t,any character..will give true / false
+  use grep to get the number position of the trues
+  words(grepl(...),words) to get that word
+  
+  
+  dictionary=c(word='def',
+  word='def',
+  word='def')
+  
+  roget(word,dictionary)
+  
+  dictionary <- c(run="walk fast",sleep="not awake")
+  
+  roget <- function(word, definitions){
+  matched <- grep(word, definitions)
+  return(names(definitions)[matched])
+  }
+  
+  ===================================================================
+  
+  Reserved Words:
+    ex: TRUE, FALSE, NULL, NaN, function
+  Additional/New Reserved Words:
+    ex: if, else, break, for, repeat, next, while, in
+    
+  myfactorial<-function(n){
+  return(prod(1:n))
+  }
+  
+  use a loop to do sum(1:10)
+  
+```{r}
+mysum<-function(n){
+  res<-0
+  
+  for (k in 1:n){
+    res<- res+k
+    }
+  return(res)
+  }
+```  
+}
+
+================OCTOBER 10===================
+
+## Base Conversion
+
+```{r}
+baseToNUmeric
+```
+
